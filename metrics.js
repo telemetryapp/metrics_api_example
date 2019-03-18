@@ -26,7 +26,7 @@ if (cliarg.token === undefined) {
 telemetry.setup(cliarg.api, cliarg.token)
 
 // Connect to MongoDB
-MongoClient.connect(url, function (err, mongo) {
+MongoClient.connect(url, { useNewUrlParser: true }, function (err, mongo) {
   if (err !== null) {
     console.log('Unable to connect to MongoDB')
   } else {
