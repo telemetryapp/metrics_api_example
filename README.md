@@ -38,7 +38,23 @@ When this program runs it will send the count of the accounts collection to the 
 
 ### Windows
 
-- Coming soon!
+1. Install a stable version of Node.js
+    - Go to https://nodejs.org/en/download/, download the Node.js Windows Installer and run it.
+2. Install Yarn, a package manager for Node.js
+    - Go to https://yarnpkg.com/lang/en/docs/install/#windows-stable and follow the steps for the installation method of your choice
+3. Install packages for metrics_api_example with the yarn package manager
+    -  Run `yarn` command from the project's root path to install node modules required to run the example
+4. Install MongoDB
+    - Go to https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/ and follow the steps to install MongoDB on windows
+5. Create test database and insert with test data
+    - Change directories to <mongodb installation dir>/bin from your command prompt and then run `mongo` to open the mongo shell
+    - Run `use database` command in mongo shell to create a new database named "database"
+    - Run `db.accounts.insert()` as shown below to insert some accounts into your test database
+    ```
+    db.accounts.insert([{_id: new ObjectId(), name: 'Test Account 1'}, {_id: new ObjectId(), name: 'Test Account 2'},{_id: new ObjectId(), name: 'Test Account 3'}])
+    ```
+    - Run `db.accounts.find()` to view the test account data you've inserted
+    - Run `exit` to exit the mongo shell
 
 ## Running the Example
 
